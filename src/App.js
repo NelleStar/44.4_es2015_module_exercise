@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { choice, remove } from "./helpers";
+import fruits from './food.js'
 
 function App() {
+  const selectedFruit = choice(fruits);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>I'd like one {selectedFruit}, please</p>
+      <p>Here you go: { remove(fruits, selectedFruit) }</p>
+      <p>May I have another?</p>
+      <p>I'm sorry, we're all out. We have {fruits.length} other types though.</p>
     </div>
   );
 }
